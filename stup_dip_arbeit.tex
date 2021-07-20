@@ -1,0 +1,115 @@
+%% Compile with XeLaTeX + MakeIndex + BibTeX
+
+\RequirePackage{fix-cm}
+\documentclass[12pt,ngerman,listof=totoc,index=totoc]{scrreprt}
+\usepackage[T1]{fontenc}
+% If Linux, use the following line:
+\usepackage[utf8]{inputenc}
+% Elseif Windows, use the following line:
+%\usepackage[latin9]{inputenc}
+
+%
+\pagestyle{headings}
+\setlength{\parskip}{\bigskipamount}
+\setlength{\parindent}{0pt}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{amsmath}
+%\usepackage{fixltx2e}
+\usepackage{cancel}
+\usepackage{empheq}
+\usepackage{bigints}
+\usepackage{autobreak}
+
+%&latex
+% headsepline: Linie am oberen Blattrand unterhalb der Seitennummer
+% bibtotoc: Aufnahme des Literaturverzeichnisses ins Inhaltsverzeichnis
+%\documentclass[a4paper,headsepline,bibtotoc]{scrreprt}
+
+% Einstellungen bez. des 'scrreprt'-Stils
+% Caption Schriftstil und -Groesse
+\renewcommand{\capfont}{\footnotesize}
+\renewcommand{\caplabelfont}{\footnotesize\bfseries}
+\typearea{15}  %Einstellung des Verhältnisses Größe des Textes zur Papiergröße
+% Sprache
+\usepackage[german]{babel}
+\selectlanguage{german}
+\setlength{\parindent}{0pt}
+
+\addto\extrasgerman{\renewcommand{\figurename}{Abb.}}
+\addto\extrasgerman{\renewcommand{\tablename}{Tab.}}
+
+% Bilder
+\usepackage[rflt]{floatflt}
+\usepackage{epsfig,wrapfig}
+
+% Programmablaufplaene (Struktogramme, Nassi-Schneidermann-Diagramme)
+% Dieses Paket ist nicht standardmäßig im CIP-Pool installiert
+% \usepackage{nassi}
+
+% Mathematische Symbole
+\usepackage{amsmath,amssymb}
+
+% Tabellen
+\usepackage{longtable,lscape}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+% Kopfzeilen
+%\usepackage{fancyheadings}
+\usepackage{fancyhdr}
+\pagestyle{plain}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markboth{\thesection\ #1}{}}
+\lhead[\fancyplain{}{\sl\leftmark}]%
+      {\fancyplain{}{\sl\leftmark}}
+\rhead[\fancyplain{}{\sl\thepage}]%
+      {\fancyplain{}{\sl\thepage}}
+\cfoot{}
+
+% Aufgabenstellung
+\usepackage{iagkopf}
+
+% Listenerscheinung
+\setlength{\itemsep}{0ex}
+\setlength{\parsep}{0ex}
+\setlength{\parskip}{2mm}
+
+
+\begin{document}
+\sloppy
+
+% Seitennumerierung bis zum Beginn der Einleitung auf kleine roemische Zahlen setzen
+\pagenumbering{roman}
+
+% neue Befehle
+%\newcommand{\file}[1]{{\sffamily\slshape #1}}
+\newcommand{\file}[1]{\mdseries\textsl{\textsf{#1}}}
+\newcommand{\sbr}[1]{\texttt{#1}}
+\newcommand{\var}[1]{\mdseries\textsl{\texttt{#1}}}
+\newcommand{\cmd}[1]{\uppercase{\texttt{#1}}}
+
+% Titelseite
+\title{title}
+\author{author}
+\cite{working}
+\cite{notWorking}
+
+% Seitennumerierung ab der folgenden Einleitung auf arabische Zahlen setzen
+\pagenumbering{arabic}
+
+% Literatur
+\bibliographystyle{literaturstil}
+\bibliography{literatur}
+
+\clearpage
+% Anhang ******************
+
+
+
+\end{document}
+
+
+--PART-BOUNDARY=.19810211828.ZM14332.iag.uni-stuttgart.de--
+
